@@ -7,6 +7,19 @@ const createQuiz = async(quizData) =>{
     return quiz;
 }
 
+const updateQuizStatus = async () => {
+    const now = new Date();
+    await QuizModule.updateMany(
+        { startDate: { $lte: now }, endDate: { $gte: now }, status: 'upcoming' },
+        { status: 'active' }
+    );
+    await QuizModule.updateMany(
+        { endDate: { $lt: now }, status: { $ne: 'finished' } },
+        { status: 'finished' }
+    );
+};
+
+
 const getActiveQuiz = async () => {
     const now = new Date();
     return await QuizModule.findOne({ startDate: { $lte: now }, endDate: { $gte: now }, status: 'active' });
@@ -38,5 +51,6 @@ module.exports = {
     createQuiz,
     getActiveQuiz,
     getQuizResult,
-    getAllQuizzes
+    getAllQuizzes,
+    updateQuizStatus
 };

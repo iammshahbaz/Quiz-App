@@ -1,5 +1,5 @@
 
-const { createQuiz, getActiveQuiz, getQuizResult, getAllQuizzes } = require("../services/quizService");
+const { createQuiz, getActiveQuiz, getQuizResult, getAllQuizzes, updateQuizStatus } = require("../services/quizService");
 
 
 
@@ -15,6 +15,7 @@ exports.createQuiz = async (req, res) => {
 
 exports.getActiveQuiz = async (req, res) => {
     try {
+        await updateQuizStatus(); 
         const quiz = await getActiveQuiz();
         if (!quiz) {
             return res.status(404).json({ success: false, message: 'No active quiz found' });
