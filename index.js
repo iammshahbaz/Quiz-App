@@ -14,7 +14,7 @@ app.use(cors());
 startCronJobs();
 
 
-app.get("/",async()=>{
+app.get("/",async(req,res)=>{
     res.send("welcome ")
 })
 
