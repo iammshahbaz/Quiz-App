@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 startCronJobs();
 
-
+//check
 app.get("/",async(req,res)=>{
     res.send("welcome ")
 })
@@ -30,5 +30,6 @@ app.listen(process.env.port, async()=>{
         console.log("Error connecting to db")
     }
 })
+
 
 
