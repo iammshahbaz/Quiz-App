@@ -52,6 +52,24 @@ This is a RESTful API for managing quizzes, built with Node.js, Express.js, and 
 ### Quizzes
 
 - **POST** `/quizzes` - Creates a new quiz (requires authentication).
+
+  - **Headers:**
+    ```http
+    Authorization: Bearer <token>
+    ```
+
+  - **Body:**
+    ```json
+    {
+      "question": "What is the capital of France?",
+      "options": ["Berlin", "Madrid", "Paris", "Rome"],
+      "rightAnswer": 2,
+      "startDate": "2024-08-30T10:00:00Z",
+      "endDate": "2024-09-01T10:10:00Z"
+    }
+    ```
+
+
 - **GET** `/quizzes/active` - Retrieves the currently active quiz.
 - **GET** `/quizzes/:id/result` - Retrieves the result of a specific quiz (requires authentication).
 - **GET** `/quizzes/all` - Retrieves all quizzes (requires authentication).
