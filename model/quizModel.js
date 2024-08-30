@@ -7,11 +7,11 @@ const quizSchema = new mongoose.Schema({
     startDate: { type: Date, required: true },
     endDate: { type: Date, required: true },
     status: { type: String, enum: ['upcoming', 'active', 'finished'], default: 'upcoming' },
-}, 
-{ 
-    timestamps: true,
-    versionKey: false 
-});
+},
+    {
+        timestamps: true,
+        versionKey: false
+    });
 
 const QuizModule = mongoose.model('Quiz', quizSchema);
 

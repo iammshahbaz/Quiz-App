@@ -11,4 +11,4 @@ quizRouter.get('/quizzes/active', rateLimiter, getActiveQuiz);
 quizRouter.get('/quizzes/:id/result', auth, getQuizResult);
 quizRouter.get('/quizzes/all', auth, getAllQuizzes);
 
-module.exports = {quizRouter}
+module.exports = { quizRouter }

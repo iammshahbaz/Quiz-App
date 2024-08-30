@@ -4,10 +4,10 @@ const userSchema = mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-},{
-    versionKey : false
+}, {
+    versionKey: false
 })
 
 const UserModule = mongoose.model("user", userSchema)
 
-module.exports = {UserModule}
+module.exports = { UserModule }

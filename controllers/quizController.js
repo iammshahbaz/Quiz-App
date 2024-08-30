@@ -15,7 +15,7 @@ exports.createQuiz = async (req, res) => {
 
 exports.getActiveQuiz = async (req, res) => {
     try {
-        await updateQuizStatus(); 
+        await updateQuizStatus();
         const quiz = await getActiveQuiz();
         if (!quiz) {
             return res.status(404).json({ success: false, message: 'No active quiz found' });

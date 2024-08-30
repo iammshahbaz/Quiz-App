@@ -14,14 +14,14 @@ app.use(cors());
 startCronJobs();
 
 //checking
-app.get("/",async(req,res)=>{
+app.get("/", async (req, res) => {
     res.send("welcome ")
 })
 
-app.use('/',quizRouter)
-app.use('/',userRouter)
+app.use('/', quizRouter)
+app.use('/', userRouter)
 
-app.listen(process.env.port, async()=>{
+app.listen(process.env.port, async () => {
     try {
         await connection;
         console.log("connected to db");

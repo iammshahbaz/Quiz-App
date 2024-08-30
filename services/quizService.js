@@ -1,7 +1,7 @@
 const { QuizModule } = require("../model/quizModel");
 
 
-const createQuiz = async(quizData) =>{
+const createQuiz = async (quizData) => {
     const quiz = new QuizModule(quizData);
     await quiz.save();
     return quiz;
