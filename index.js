@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 startCronJobs();
 
-//check
+//checking
 app.get("/",async(req,res)=>{
     res.send("welcome ")
 })
